@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# nextjs-server-action-tester
+/public/server-actions.json
+/app/api/list-actions
+/app/list-actions

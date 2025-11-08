@@ -3,9 +3,13 @@
 import FooterLink from "@/components/forms/FooterLink";
 import InputField from "@/components/forms/InputField";
 import { Button } from "@/components/ui/button";
+import { signInWithEmail } from "@/lib/actions/auth.actions";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 const SignInPage = () => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -20,7 +24,10 @@ const SignInPage = () => {
 
   const onSubmit = async (data: SignInFormData) => {
     try {
-      console.log(data);
+      const result = await signInWithEmail(data);
+      if (result.success) {
+        router.push("/");
+      }
     } catch (e) {
       console.error(e);
     }
