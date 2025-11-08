@@ -112,7 +112,7 @@ export function SearchCommand({
               {displayStocks.map((stock, index) => (
                 <li key={index} className="search-item">
                   <Link
-                    href={`/stock/${stock.symbol}`}
+                    href={`/stocks/${stock.symbol}`}
                     onClick={() => handleSelectStock(stock)}
                     className="search-item-link"
                   >
